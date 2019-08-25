@@ -1,0 +1,71 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    {% load staticfiles %}  
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/emp">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Enter Details</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Employee Id:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="eid" id="id_eid" required maxlength="20" value="{{ employee.eid }}"/>  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Employee Name:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="ename" id="id_ename" required maxlength="100" value="{{ employee.ename }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Employee Status:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="status" id="id_status" required  value="{{ employee.status }}" />  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Start Date:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="start_date" id="id_start_date" required  value="{{ employee.start_date }}" />  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">End Date:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="end_date" id="id_end_date" required  value="{{ employee.end_date }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Won Number:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="won_no" id="id_won_no" required  value="{{ employee.won.won_no }}" />  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Won Name:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="won_name" id="id_won_name" required  value="{{ employee.won.won_name }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-primary">Submit</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>  
