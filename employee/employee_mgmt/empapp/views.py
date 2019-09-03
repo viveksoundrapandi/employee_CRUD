@@ -34,6 +34,9 @@ def update(request, id):
         emp.end_date = datetime.strptime(request.POST['end_date'], "%Y/%m/%d").date()
         emp.won.won_no = request.POST['won_no']
         emp.won.won_name = request.POST['won_name']
+        print "*************"
+        print emp.won.won_name
+        emp.won.save()
         emp.save()
     return render(request, 'edit.html', {'employee': emp})  
 def destroy(request, id):  

@@ -1,17 +1,17 @@
 server:
   build: .
   dockerfile: ./Dockerfile
-  working_dir: /app/employee/employee_mgmt
+  working_dir: /app/employee
   volumes:
     - .:/app/employee
   links:
    - db
      #volumes:
-     #- /Users/viveksoundrapandi/Desktop/2019/kumsy/employee:/app/employee
+     #-   /Users/viveksoundrapandi/Desktop/2019/kumsy/employee_CRUD/employee/employee_mgmt:/app/employee
   ports:
       - "5000:5000"
   environment:
-    PYTHONPATH: $PYTHONPATH:/app/employee/employee_mgmt
+    PYTHONPATH: $PYTHONPATH:/app/employee/t
   command: python manage.py runserver 0.0.0.0:5000
 db:
   image: postgres:9.4
